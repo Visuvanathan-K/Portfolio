@@ -14,22 +14,25 @@ export function ScrollyCanvas() {
   const [loaded, setLoaded] = useState(false);
   const frameCount = 120; // 0 to 119
 
-  // Maps scroll progress 0-0.85 to frame index 0-119 so it finishes BEFORE unsticking!
-  const frameIndex = useTransform(scrollYProgress, [0, 0.85], [0, frameCount - 1], { clamp: true });
+  // Maps scroll progress 0-0.9 to frame index 0-119 so it finishes BEFORE unsticking!
+  const frameIndex = useTransform(scrollYProgress, [0, 0.9], [0, frameCount - 1], { clamp: true });
 
   // --- OVERLAY TRANSFORMS ---
   // Section 1: Hero
-  const opacity1 = useTransform(scrollYProgress, [0, 0.15], [1, 0], { clamp: true });
-  const y1 = useTransform(scrollYProgress, [0, 0.15], [0, -50], { clamp: true });
-  const scale1 = useTransform(scrollYProgress, [0, 0.15], [1, 0.95], { clamp: true });
+  const opacity1 = useTransform(scrollYProgress, [0, 0.08], [1, 0], { clamp: true });
+  const y1 = useTransform(scrollYProgress, [0, 0.08], [0, -40], { clamp: true });
+  const scale1 = useTransform(scrollYProgress, [0, 0.08], [1, 0.98], { clamp: true });
+  const visibility1 = useTransform(scrollYProgress, (p) => (p > 0.12 ? "hidden" : "visible"));
 
   // Section 2: Middle string (Starts completely after hero fades out)
-  const opacity2 = useTransform(scrollYProgress, [0.25, 0.40, 0.55], [0, 1, 0], { clamp: true });
-  const x2 = useTransform(scrollYProgress, [0.25, 0.40, 0.55], [-50, 0, 50], { clamp: true });
+  const opacity2 = useTransform(scrollYProgress, [0.15, 0.22, 0.42, 0.50], [0, 1, 1, 0], { clamp: true });
+  const x2 = useTransform(scrollYProgress, [0.15, 0.22, 0.42, 0.50], [-20, 0, 0, 20], { clamp: true });
+  const visibility2 = useTransform(scrollYProgress, (p) => (p < 0.12 || p > 0.55 ? "hidden" : "visible"));
 
   // Section 3: Final string
-  const opacity3 = useTransform(scrollYProgress, [0.65, 0.80, 0.95], [0, 1, 0], { clamp: true });
-  const x3 = useTransform(scrollYProgress, [0.65, 0.80, 0.95], [50, 0, -50], { clamp: true });
+  const opacity3 = useTransform(scrollYProgress, [0.58, 0.65, 0.85, 0.92], [0, 1, 1, 0], { clamp: true });
+  const x3 = useTransform(scrollYProgress, [0.58, 0.65, 0.85, 0.92], [20, 0, 0, -20], { clamp: true });
+  const visibility3 = useTransform(scrollYProgress, (p) => (p < 0.55 || p > 0.95 ? "hidden" : "visible"));
 
   useEffect(() => {
     const loadImages = async () => {
@@ -122,38 +125,38 @@ export function ScrollyCanvas() {
         <div className="absolute inset-0 z-10 pointer-events-none selection:bg-white selection:text-black">
           <div className="h-full w-full flex flex-col justify-center px-6 md:px-24">
             
-            {/* Section 1 - 0% */}
+            {/* Section 1 - Hero */}
             <motion.div
-              style={{ opacity: opacity1, y: y1, scale: scale1 }}
-              className="absolute inset-0 flex flex-col items-center justify-center text-center mix-blend-difference"
+              style={{ opacity: opacity1, y: y1, scale: scale1, visibility: visibility1 }}
+              className="absolute inset-0 flex flex-col items-center justify-center text-center z-20"
             >
-              <h1 className="text-5xl md:text-9xl font-bold tracking-tighter text-white drop-shadow-lg">
+              <h1 className="text-5xl md:text-9xl font-bold tracking-tighter text-white drop-shadow-2xl">
                 Visuvanathan K
               </h1>
-              <p className="mt-6 text-xl md:text-3xl text-zinc-300 font-light tracking-wide max-w-2xl mx-auto drop-shadow-lg">
+              <p className="mt-6 text-xl md:text-3xl text-zinc-100 font-light tracking-wide max-w-2xl mx-auto drop-shadow-xl">
                 Backend Developer
               </p>
               <div className="mt-12 flex flex-wrap justify-center gap-6 pointer-events-auto">
-                <a href="#contact" className="px-8 py-3.5 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">Contact Me</a>
+                <a href="#contact" className="px-8 py-3.5 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-2xl">Contact Me</a>
               </div>
             </motion.div>
 
-            {/* Section 2 - 30% */}
+            {/* Section 2 - Middle String */}
             <motion.div
-              style={{ opacity: opacity2, x: x2 }}
-              className="absolute inset-y-0 left-6 md:left-24 flex flex-col justify-center mix-blend-difference pointer-events-none"
+              style={{ opacity: opacity2, x: x2, visibility: visibility2, filter: "drop-shadow(0 10px 40px rgba(0,0,0,0.9))" }}
+              className="absolute inset-y-0 left-6 md:left-24 flex flex-col justify-center pointer-events-none z-20"
             >
-              <h2 className="text-4xl md:text-8xl font-medium max-w-4xl text-white leading-tight">
+              <h2 className="text-4xl md:text-8xl font-semibold max-w-4xl text-white leading-tight">
                 Building secure REST APIs<br />and scalable systems.
               </h2>
             </motion.div>
 
-            {/* Section 3 - 60% */}
+            {/* Section 3 - Final String */}
             <motion.div
-              style={{ opacity: opacity3, x: x3 }}
-              className="absolute inset-y-0 right-6 md:right-24 flex flex-col justify-center items-end text-right mix-blend-difference pointer-events-none"
+              style={{ opacity: opacity3, x: x3, visibility: visibility3, filter: "drop-shadow(0 10px 40px rgba(0,0,0,0.9))" }}
+              className="absolute inset-y-0 right-6 md:right-24 flex flex-col justify-center items-end text-right pointer-events-none z-20"
             >
-              <h2 className="text-4xl md:text-8xl font-medium max-w-3xl text-white leading-tight">
+              <h2 className="text-4xl md:text-8xl font-semibold max-w-3xl text-white leading-tight">
                 Powered by Java, Spring Boot,<br />and MySQL.
               </h2>
             </motion.div>
