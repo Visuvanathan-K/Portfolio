@@ -10,7 +10,7 @@ export function About() {
         </p>
         
         <div className="mt-8">
-          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
+          <a href="https://drive.google.com/file/d/1V-qsj-fndzpSZNGzSxrqmkMsQK9sTwxZ/view?usp=drive_link" target="_blank" rel="noreferrer" className="inline-flex items-center px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
             Download Resume
           </a>
         </div>
