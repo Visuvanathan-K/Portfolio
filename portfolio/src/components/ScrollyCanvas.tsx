@@ -16,8 +16,8 @@ export function ScrollyCanvas() {
 
   // Maps scroll progress 0-1 to frame index 0-119
   const frameIndex = useTransform(scrollYProgress, [0, 1], [0, frameCount - 1], { clamp: true });
-  // Zoom out as you scroll
-  const canvasScale = useTransform(scrollYProgress, [0, 1], [1.15, 1.0], { clamp: true });
+  // No extra zoom at start
+  const canvasScale = useTransform(scrollYProgress, [0, 1], [1.0, 1.0], { clamp: true });
 
   // --- OVERLAY TRANSFORMS ---
   // Section 1: Hero
@@ -66,14 +66,24 @@ export function ScrollyCanvas() {
       return; 
     }
 
-    // Object-fit: cover calculation
-    const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+    // Calculate scale for object-fit: cover, but reduce it if it's too aggressive (mobile)
+    let scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+    
+    // If the image is being over-zoomed (common on mobile), scale it down slightly
+    // but not so much that we see edges if we can help it.
+    if (canvas.height / canvas.width > 1.5) { // Likely mobile
+      scale *= 0.8; // Reduce zoom by 20%
+    }
+
     const w = img.width * scale;
     const h = img.height * scale;
     const x = canvas.width / 2 - w / 2;
     const y = canvas.height / 2 - h / 2;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Fill background to match theme if image doesn't cover
+    ctx.fillStyle = "#050505";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(img, x, y, w, h);
   };
 
