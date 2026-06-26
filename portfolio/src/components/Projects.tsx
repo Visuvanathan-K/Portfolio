@@ -37,7 +37,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section className="relative min-h-screen bg-[#050505] text-white px-6 md:px-24 py-32 object-cover border-t border-white/5">
+    <section id="projects" className="relative min-h-screen bg-[#050505] text-white px-6 md:px-24 py-32 object-cover border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <h3 className="text-sm tracking-[0.3em] text-zinc-500 uppercase mb-4">Technical Portfolio</h3>
