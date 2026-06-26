@@ -3,35 +3,35 @@ import React from 'react';
 const projects = [
   { 
     id: 1, 
+    title: 'Intrusion Detection System', 
+    tech: 'Python, TensorFlow/Keras, LSTM, Scikit-learn, Pandas, NumPy', 
+    description: 'Developed an LSTM-based deep learning model to classify network traffic as normal or malicious using the Darknet dataset. Preprocessed features, handled missing values, and normalized data for training. Evaluated model with accuracy, precision, recall, F1-score, and confusion matrix; built a prediction pipeline for classifying new network traffic samples.',
+    link: 'https://github.com/Visuvanathan-K/Intrusion-Detection-System',
+    image: '/images/ids_project.png'
+  },
+  { 
+    id: 2, 
+    title: 'RAG PDF Q&A System', 
+    tech: 'Python, FastAPI, Streamlit, ChromaDB, Groq Llama 3.3, Inngest, Sentence Transformers', 
+    description: 'Built an end-to-end RAG application for PDF upload and Q&A. Implemented text chunking, semantic embeddings via Sentence Transformers, and vector storage with ChromaDB. Developed event-driven backend (FastAPI + Inngest) and integrated Groq Llama 3.3 for context-aware answers; built Streamlit UI for real-time indexing.',
+    link: 'https://github.com/Visuvanathan-K/RAG-PDF-Question-Answering',
+    image: '/images/rag_project.png'
+  },
+  { 
+    id: 3, 
+    title: 'OCR Text Extraction', 
+    tech: 'Python, EasyOCR, OpenCV, Streamlit, NumPy', 
+    description: 'Built a web-based OCR application using EasyOCR for image text extraction with OpenCV preprocessing (bounding boxes, normalization); supported PNG, JPG, JPEG, and WEBP formats via a clean Streamlit interface.',
+    link: 'https://github.com/Visuvanathan-K/OCR-Text-Extraction',
+    image: '/images/ocr_project.png'
+  },
+  { 
+    id: 4, 
     title: 'Bookstore API', 
     tech: 'Java, Spring Boot, Hibernate (JPA), MySQL, QueryDSL, JWT', 
     description: 'Secure REST API implementing JWT authentication and modular layered architecture. Designed normalized schema and optimized queries with QueryDSL. Achieved a 40% performance improvement with proper pagination and exception handling.',
     link: 'https://github.com/Visuvanathan-K/Bookstore-Api',
-    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2600&auto=format&fit=crop'
-  },
-  { 
-    id: 2, 
-    title: 'Employee Management', 
-    tech: 'Java, Spring Boot, Hibernate, MySQL', 
-    description: 'RESTful CRUD API built to handle 5000+ records efficiently with a response time consistently under 200ms. Focused on clean architecture, API design, robust database schemas, and backend testing.',
-    link: 'https://github.com/Visuvanathan-K/Employee-Management',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop'
-  },
-  { 
-    id: 3, 
-    title: 'Library Management', 
-    tech: 'Java, Swing, MySQL', 
-    description: 'A desktop application integrating a responsive Swing UI with a MySQL backend. Implemented real-time search filters and transaction logging to enhance operations for librarians.',
-    link: 'https://github.com/Visuvanathan-K/Java-Projects',
-    image: 'https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=2574&auto=format&fit=crop'
-  },
-  { 
-    id: 4, 
-    title: 'Typing Speed Test', 
-    tech: 'Java', 
-    description: 'A logic-driven console application built strictly in Java to track and measure typing speed and accuracy in real-time, providing deep analytics and error tracking dynamically.',
-    link: 'https://github.com/Visuvanathan-K/Java-Projects',
-    image: 'https://images.unsplash.com/photo-1555532538-dcdbd01d3738?q=80&w=2752&auto=format&fit=crop'
+    image: '/images/bookstore_project.png'
   },
 ];
 
@@ -73,6 +73,19 @@ export function Projects() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* View All Projects CTA */}
+        <div className="mt-20 text-center">
+          <a 
+            href="https://github.com/Visuvanathan-K" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/5 text-zinc-300 font-semibold hover:bg-white/10 hover:border-[#00ff88]/30 hover:text-white transition-all duration-300 shadow-md group"
+          >
+            <span>View All Projects on GitHub</span>
+            <span className="text-xl group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+          </a>
         </div>
       </div>
     </section>

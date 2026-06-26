@@ -22,16 +22,16 @@ export function Experience() {
             <ul className="space-y-5 text-zinc-300 font-light leading-relaxed mb-10">
               <li className="flex items-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2.5 mr-4 shrink-0"></span>
-                <span>Automated reporting workflows in a reminder application, improving schedule adherence by 25% and reducing manual reporting time by 30%.</span>
+                <span>Built a Data Analysis &amp; Reminder Application — automated reporting workflows reducing manual effort by 30% and improving schedule adherence by 25%.</span>
               </li>
               <li className="flex items-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2.5 mr-4 shrink-0"></span>
-                <span>Gained exposure to industrial-scale software life cycles and process documentation.</span>
+                <span>Gained exposure to industrial-scale SDLC, agile practices, and cross-functional collaboration in a real-world engineering environment.</span>
               </li>
             </ul>
 
             <div className="flex flex-wrap gap-2 md:gap-3">
-              {['Workflow Automation', 'Software Life Cycle', 'Process Documentation'].map(pill => (
+              {['Data Analysis', 'Workflow Automation', 'SDLC', 'Agile Practices'].map(pill => (
                 <span key={pill} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs text-zinc-300 tracking-wider hover:bg-white/10 transition-colors">
                   {pill}
                 </span>

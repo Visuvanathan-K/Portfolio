@@ -6,11 +6,11 @@ export function About() {
       <div className="max-w-4xl mx-auto text-center">
         <h3 className="text-sm tracking-[0.3em] text-zinc-500 uppercase mb-8">Summary</h3>
         <p className="text-2xl md:text-4xl font-light leading-relaxed text-zinc-300 mb-16">
-          Backend Developer specializing in building secure REST APIs and scalable systems using Java, Spring Boot, and MySQL. Proven ability to deliver reliable software solutions and solve complex engineering problems.
+          Software Engineer with hands-on experience in Java, Python, Spring Boot, and REST API development, and a growing portfolio of AI/ML projects including RAG, deep learning-based IDS, and OCR applications.
         </p>
         
         <div className="mt-8">
-          <a href="https://drive.google.com/file/d/1V-qsj-fndzpSZNGzSxrqmkMsQK9sTwxZ/view?usp=drive_link" target="_blank" rel="noreferrer" className="inline-flex items-center px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
+          <a href="https://drive.google.com/file/d/1LoqGbu8ICK5POU2SooXSmtjOF2_gHFbU/view?usp=sharing" target="_blank" rel="noreferrer" className="inline-flex items-center px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
             Download Resume
           </a>
         </div>

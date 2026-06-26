@@ -4,22 +4,32 @@ const skills = [
   {
     category: "Programming Languages",
     icon: "📜",
-    items: ["Java", "Python"]
+    items: ["Java", "Python", "JavaScript"]
   },
   {
-    category: "Backend Frameworks",
+    category: "Frameworks & Web",
     icon: "⚙️",
-    items: ["Spring Boot", "Hibernate (JPA)"]
+    items: ["Spring Boot", "FastAPI", "Streamlit", "TensorFlow/Keras"]
   },
   {
-    category: "Databases",
+    category: "AI/ML & Vector Search",
+    icon: "🧠",
+    items: ["Deep Learning (LSTM)", "Retrieval-Augmented Generation (RAG)", "Sentence Transformers", "LLM Integration (Groq/Llama 3.3)", "EasyOCR"]
+  },
+  {
+    category: "Databases & Vector DBs",
     icon: "🗄️",
-    items: ["MySQL", "H2"]
+    items: ["MySQL", "ChromaDB (Vector DB)", "H2"]
   },
   {
-    category: "Tools & Software",
+    category: "Tools & Libraries",
     icon: "🛠️",
-    items: ["QueryDSL", "JWT", "Git", "GitHub", "Eclipse", "Insomnia"]
+    items: ["Hibernate (JPA)", "QueryDSL", "JWT", "OpenCV", "Pandas & NumPy", "Scikit-learn", "Inngest", "Git & GitHub"]
+  },
+  {
+    category: "Practices & Concepts",
+    icon: "🏗️",
+    items: ["REST APIs", "Vector Search", "Network Security", "Data Preprocessing", "OOP", "Agile/Scrum"]
   }
 ];
 
