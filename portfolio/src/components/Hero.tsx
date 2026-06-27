@@ -74,7 +74,7 @@ export function Hero() {
             className="flex flex-wrap gap-4 pt-4"
           >
             <a 
-              href="https://drive.google.com/file/d/1LoqGbu8ICK5POU2SooXSmtjOF2_gHFbU/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1jb5MhTpsavDmcO-UiThuqPkulPbnwJeB/view?usp=sharing" 
               target="_blank" 
               rel="noreferrer" 
               className="px-8 py-3.5 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.1)] flex items-center gap-2"

@@ -10,7 +10,7 @@ export function About() {
         </p>
         
         <div className="mt-8">
-          <a href="https://drive.google.com/file/d/1LoqGbu8ICK5POU2SooXSmtjOF2_gHFbU/view?usp=sharing" target="_blank" rel="noreferrer" className="inline-flex items-center px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
+          <a href="https://drive.google.com/file/d/1jb5MhTpsavDmcO-UiThuqPkulPbnwJeB/view?usp=sharing" target="_blank" rel="noreferrer" className="inline-flex items-center px-10 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
             Download Resume
           </a>
         </div>
